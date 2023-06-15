@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>cadastro</title>
+    </head>
+    <body>
+        <main class="container-fluid p-5 d-flex justify-content-center align-items-center">
+            <div>
+                <form action={% url 'core:cadastroPresenca' %} novalidate method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1 class="d-flex justify-content-center p-5 pt-0">Cadastrar Presença</h1>
+                    <h5>Nome aluno: {{ form.nome }}</h5>
+                    <br>
+                    <h5>Nome professor: {{ form.professor }}</h5>
+                    <br>
+                    <div class="text-center">
+                        <input type="submit" value="Cadastrar" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

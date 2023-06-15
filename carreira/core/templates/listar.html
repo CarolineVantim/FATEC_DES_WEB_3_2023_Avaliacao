@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastros</title>
+    </head>
+    <body>
+        <main class="container-fluid p-5">
+            {% if cadastrados %}
+            <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                <th>Aluno</th>
+                <th>Professor</th>
+                <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cadastroPresenca in cadastrados %}
+                <tr>
+                <td>{{ cadastroPresenca.nome }}</td>
+                <td>{{ cadastroPresenca.professor }}</td>
+                <td>{{ cadastroPresenca.data }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+            {% else %}
+            <h1 class="d-flex justify-content-center p-5 pt-0">Não há alunos cadastrados!</h1>
+            {% endif %}
+        
+        </main>
+    </body>
+</html>
